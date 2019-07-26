@@ -1,0 +1,9 @@
+.user-wall
+  .user-wall-header
+    h1 #{@creator.first_name ? @creator.first_name.titleize : @creator.id}'s photos
+  .user-wall-images
+    - @photos.each do |photo|
+      = link_to photo_path(photo) do
+        = image_tag photo.image_url
+
+p = link_to 'Back to all photos', photos_path

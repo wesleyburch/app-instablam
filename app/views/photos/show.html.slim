@@ -1,0 +1,11 @@
+p id="notice" = notice
+test
+.user
+  .photo-header
+    h2 = link_to @creator.first_name ? @creator.first_name.titleize : @creator.id, user_wall_path(creator_id: @creator.id)
+  .user-image
+    = image_tag @photo.image_url, data: {creator: @creator.id}
+    .user-image-actions
+      p = link_to 'Back', photos_path
+      - unless @creator.id != @user.id
+        p = link_to 'Delete Photo', photo_path(@photo), method: :delete, data: { confirm: "Are you sure?"}

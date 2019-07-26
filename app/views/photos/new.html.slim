@@ -1,0 +1,12 @@
+h1 New Photo for #{@user.id}
+= simple_form_for @photo do |f|
+  = f.input :image, as: :hidden, input_html: { value: @photo.cached_image_data }
+  = f.input :user_id, as: :hidden, input_html: { value: @user.id }
+  = f.input :image, as: :file
+  br
+  = f.button :submit, "Submit"
+
+/ <%= render 'form', photo: @photo %>
+= link_to 'Back', photos_path
+
+= render 'uppy_js'

@@ -1,4 +1,4 @@
-h1 New Photo for #{@user.id}
+h1 New Photo for #{@user.first_name}
 = simple_form_for @photo do |f|
   = f.input :image, as: :hidden, input_html: { value: @photo.cached_image_data }
   = f.input :user_id, as: :hidden, input_html: { value: @user.id }

@@ -3,8 +3,8 @@ require "shrine/storage/file_system"
 require "shrine/storage/s3"
 
 s3_options = {
-  bucket: "app-instablam"
-  access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+  bucket: "app-instablam",
+  access_key_id: ENV['AWS_ACCESS_KEY_ID'],
   secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
   region: "us-west-1"
 }
